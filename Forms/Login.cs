@@ -22,27 +22,15 @@ namespace SchoolManagementSystem.Forms
 
         private void button_login_Click(object sender, EventArgs e)
         {
-            string[] lines = System.IO.File.ReadAllLines("login.txt");
-
             string inputUsername = textBox_username.Text;
             string inputPassword = textBox_password.Text;
 
-            foreach (string line in lines)
-            {
-                string[] parts = line.Split(':');
-                if (parts.Length == 3)
-                {
-                    string storedUserType = parts[0];
-                    string storedUsername = parts[1];
-                    string storedPassword = parts[2];
-
-                    if (inputUsername == storedUsername && inputPassword == storedPassword)
-                    {
-                        CurrentUser = new User(storedUserType, storedUsername, storedPassword);
-                        break;
-                    }
-                }
-            }
+            string[] lines = System.IO.File.ReadAllLines("login.txt");
+            var CurrentUser = lines
+                .Select(line => line.Split(':'))
+                .Where(parts => parts.Length == 3)
+                .Select(parts => new User(parts[0], parts[1], parts[2]))
+                .FirstOrDefault(u => u.Username == inputUsername && u.Password == inputPassword);
 
             if (CurrentUser != null)
             {
