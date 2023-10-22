@@ -38,7 +38,7 @@ namespace SchoolManagementSystem.Forms
 
                     if (inputUsername == storedUsername && inputPassword == storedPassword)
                     {
-                        CurrentUser = new User(storedUserType, storedUsername);
+                        CurrentUser = new User(storedUserType, storedUsername, storedPassword);
                         break;
                     }
                 }

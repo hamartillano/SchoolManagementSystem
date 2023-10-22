@@ -10,11 +10,13 @@ namespace SchoolManagementSystem.Classes
     {
         public string UserType { get; set; }
         public string Username { get; set; }
+        public string Password { get; set; }
 
-        public User(string userType, string username)
+        public User(string userType, string username, string password)
         {
             this.UserType = userType;
             this.Username = username;
+            this.Password = password;
         }
     }
 }
