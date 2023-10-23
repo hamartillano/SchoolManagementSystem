@@ -26,23 +26,27 @@ namespace SchoolManagementSystem.Forms
             string inputPassword = textBox_password.Text;
 
             string[] lines = System.IO.File.ReadAllLines("login.txt");
-            var CurrentUser = lines
+            CurrentUser = lines
                 .Select(line => line.Split(':'))
-                .Where(parts => parts.Length == 3)
-                .Select(parts => new User(parts[0], parts[1], parts[2]))
+                .Where(parts => parts.Length == 4)
+                .Select(parts => new User(
+                    (UserType)Enum.Parse(typeof(UserType), parts[0]),
+                    parts[1],
+                    parts[2],
+                    parts[3]))
                 .FirstOrDefault(u => u.Username == inputUsername && u.Password == inputPassword);
 
             if (CurrentUser != null)
             {
                 switch (CurrentUser.UserType)
                 {
-                    case "admin":
+                    case UserType.Admin:
                         MessageBox.Show("Admin login successful!");
                         break;
-                    case "teacher":
+                    case UserType.Teacher:
                         MessageBox.Show("Teacher login successful!");
                         break;
-                    case "student":
+                    case UserType.Student:
                         MessageBox.Show("Student login successful!");
                         break;
                     default:
@@ -59,8 +63,8 @@ namespace SchoolManagementSystem.Forms
         private void button_register_Click(object sender, EventArgs e)
         {
             Register registerForm = new Register();
-            this.Hide();
             registerForm.Show();
+            this.Hide();
         }
     }
 }
