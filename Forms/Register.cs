@@ -45,13 +45,19 @@ namespace SchoolManagementSystem.Forms
                 string username = textBox_username.Text;
                 string password = textBox_password.Text;
 
-                User newUser = new User(userType, username, password);
-                User.WriteUserToFile(newUser);
-
-                MessageBox.Show("Registration successful!");
-                this.Close();
-                Login loginForm = new Login();
-                loginForm.Show();
+                if (User.UserExists(userType, username))
+                {
+                    MessageBox.Show("User already exists in the system.");
+                }
+                else
+                {
+                    User newUser = new User(userType, username, password);
+                    User.WriteUserToFile(newUser);
+                    MessageBox.Show("Registration successful!");
+                    this.Close();
+                    Login loginForm = new Login();
+                    loginForm.Show();
+                }
             }
             else
             {

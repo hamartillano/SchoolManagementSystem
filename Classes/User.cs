@@ -34,5 +34,28 @@ namespace SchoolManagementSystem.Classes
                 Console.WriteLine($"An error occurred while writing to the file: {ex.Message}");
             }
         }
+
+        public static bool UserExists(string userType, string username)
+        {
+            try
+            {
+                string[] lines = File.ReadAllLines("login.txt");
+
+                bool userExists = lines
+                    .Where(line => line.Split(':').Length == 3)
+                    .Any(line =>
+                    {
+                        var parts = line.Split(':');
+                        return parts[0] == userType && parts[1] == username;
+                    });
+
+                return userExists;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while checking the file: {ex.Message}");
+                return false;
+            }
+        }
     }
 }
