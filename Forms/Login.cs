@@ -52,8 +52,15 @@ namespace SchoolManagementSystem.Forms
             }
             else
             {
-                MessageBox.Show("Login failed. Please check your credentials.");
+                MessageBox.Show("Login failed. Please check your credentials");
             }
+        }
+
+        private void button_register_Click(object sender, EventArgs e)
+        {
+            Register registerForm = new Register();
+            this.Hide();
+            registerForm.Show();
         }
     }
 }
