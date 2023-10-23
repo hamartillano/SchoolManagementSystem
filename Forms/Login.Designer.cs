@@ -33,6 +33,7 @@
             this.textBox_username = new System.Windows.Forms.TextBox();
             this.textBox_password = new System.Windows.Forms.TextBox();
             this.button_login = new System.Windows.Forms.Button();
+            this.button_register = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label_username
@@ -77,11 +78,22 @@
             this.button_login.UseVisualStyleBackColor = true;
             this.button_login.Click += new System.EventHandler(this.button_login_Click);
             // 
+            // button_register
+            // 
+            this.button_register.Location = new System.Drawing.Point(213, 90);
+            this.button_register.Name = "button_register";
+            this.button_register.Size = new System.Drawing.Size(75, 23);
+            this.button_register.TabIndex = 5;
+            this.button_register.Text = "Register";
+            this.button_register.UseVisualStyleBackColor = true;
+            this.button_register.Click += new System.EventHandler(this.button_register_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 130);
+            this.Controls.Add(this.button_register);
             this.Controls.Add(this.button_login);
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.textBox_username);
@@ -102,5 +114,6 @@
         private System.Windows.Forms.TextBox textBox_username;
         private System.Windows.Forms.TextBox textBox_password;
         private System.Windows.Forms.Button button_login;
+        private System.Windows.Forms.Button button_register;
     }
 }
