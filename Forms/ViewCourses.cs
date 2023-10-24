@@ -51,16 +51,17 @@ namespace SchoolManagementSystem.Forms
 
         private void button_viewCourse_Click(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count > 0)
+            if (listView1.SelectedItems.Count == 1)
             {
                 ListViewItem selectedItem = listView1.SelectedItems[0];
 
-                string courseID = selectedItem.Text;
-                string courseName = selectedItem.SubItems[0].Text;
-                string teacherName = selectedItem.SubItems[1].Text;
+                int courseID = int.Parse(selectedItem.Text);
+                string courseName = selectedItem.SubItems[1].Text;
+                string teacherName = selectedItem.SubItems[2].Text;
 
-                string message = $"Course ID: {courseID}\nCourse Name: {courseName}\nTeacher: {teacherName}";
-                MessageBox.Show(message, "Selected Course Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Course selectedCourse = new Course(courseID, courseName, teacherName);
+                ViewCourse viewCourseForm = new ViewCourse(selectedCourse);
+                viewCourseForm.Show();
             }
             else
             {
