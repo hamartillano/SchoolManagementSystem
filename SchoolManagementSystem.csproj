@@ -46,6 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\AttendanceRecord.cs" />
+    <Compile Include="Classes\Course.cs" />
+    <Compile Include="Classes\Student.cs" />
+    <Compile Include="Classes\Teacher.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
@@ -90,9 +94,5 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Content Include="Classes\ClassesFolder.txt" />
-    <Content Include="Forms\FormsFolder.txt" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -34,25 +34,25 @@ namespace SchoolManagementSystem.Forms
         {
             if (!string.IsNullOrWhiteSpace(textBox_username.Text) && !string.IsNullOrWhiteSpace(textBox_password.Text))
             {
-                if ((radioButton_teacher.Checked && radioButton_student.Checked) ||
-                    (!radioButton_teacher.Checked && !radioButton_student.Checked))
+                if (!radioButton_teacher.Checked && !radioButton_student.Checked)
                 {
                     MessageBox.Show("Please select one user type (teacher or student)");
                     return;
                 }
 
-                string userType = radioButton_teacher.Checked ? "teacher" : "student";
+                UserType userType = radioButton_teacher.Checked ? UserType.Teacher : UserType.Student;
                 string username = textBox_username.Text;
                 string password = textBox_password.Text;
+                string name = textBox_name.Text;
 
-                if (User.UserExists(userType, username))
+                if (User.UserLoginExists(userType, username))
                 {
                     MessageBox.Show("User already exists in the system.");
                 }
                 else
                 {
-                    User newUser = new User(userType, username, password);
-                    User.WriteUserToFile(newUser);
+                    User newUser = new User(userType, username, password, name);
+                    User.WriteUserToLoginFile(newUser);
                     MessageBox.Show("Registration successful!");
                     this.Close();
                     Login loginForm = new Login();
