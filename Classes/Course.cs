@@ -20,8 +20,6 @@ namespace SchoolManagementSystem.Classes
             this.CourseID = courseID;
             this.CourseName = courseName;
             this.TeacherName = teacherName;
-            this.EnrolledStudents = new List<Student>();
-            this.AttendanceRecords = new List<AttendanceRecord>();
         }
     }
 }

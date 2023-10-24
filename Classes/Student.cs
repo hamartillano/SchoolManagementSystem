@@ -9,13 +9,15 @@ namespace SchoolManagementSystem.Classes
 {
     public class Student : User
     {
+        public int StudentID { get; set; }
         public List<Course> EnrolledCourses { get; set; }
         public Dictionary<Course, double> Grade { get; set; }
         public Dictionary<Course, List<AttendanceRecord>> Attendance {  get; set; }
 
-        public Student(UserType userType, string username, string password, string name)
+        public Student(UserType userType, string username, string password, string name, int studentID)
             : base(userType, username, password, name)
         {
+            this.StudentID = studentID;
             this.EnrolledCourses = new List<Course>();
             this.Grade = new Dictionary<Course, double>();
             this.Attendance = new Dictionary<Course, List<AttendanceRecord>>();
