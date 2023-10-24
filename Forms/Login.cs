@@ -45,6 +45,9 @@ namespace SchoolManagementSystem.Forms
                         break;
                     case UserType.Teacher:
                         MessageBox.Show("Teacher login successful!");
+                        ViewCourses viewCourses = new ViewCourses(CurrentUser);
+                        viewCourses.Show();
+                        this.Hide();
                         break;
                     case UserType.Student:
                         MessageBox.Show("Student login successful!");
