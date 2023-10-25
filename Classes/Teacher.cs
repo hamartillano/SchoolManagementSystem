@@ -11,11 +11,11 @@ namespace SchoolManagementSystem.Classes
         public List<Course> TeachingCourses { get; set; }
         public List<Student> EnrolledStudents { get; set; }
 
-        public Teacher(UserType userType, string username, string password, string name)
+        public Teacher(UserType userType, string username, string password, string name, List<Course> teachingCourses, List<Student> enrolledStudents)
             : base(userType, username, password, name)
         {
-            this.TeachingCourses = new List<Course>();
-            this.EnrolledStudents = new List<Student>();
+            this.TeachingCourses = teachingCourses;
+            this.EnrolledStudents = enrolledStudents;
         }
     }
 }

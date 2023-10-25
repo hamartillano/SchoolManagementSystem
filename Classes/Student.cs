@@ -18,9 +18,6 @@ namespace SchoolManagementSystem.Classes
             : base(userType, username, password, name)
         {
             this.StudentID = studentID;
-            this.EnrolledCourses = new List<Course>();
-            this.Grade = new Dictionary<Course, double>();
-            this.Attendance = new Dictionary<Course, List<AttendanceRecord>>();
         }
     }
 }
