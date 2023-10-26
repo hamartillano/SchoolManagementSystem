@@ -14,59 +14,42 @@ namespace SchoolManagementSystem.Forms
 {
     public partial class ViewCourses : Form
     {
-        private void PopulateCourseListView(User currentUser)
+        private void LoadTeachingCourses(Teacher CurrentTeacher)
         {
             listView1.Items.Clear();
 
-            string[] courseLines = File.ReadAllLines("Courses.txt");
-
-            var filteredCourses = courseLines
-                .Where(line =>
-                {
-                    string[] courseInfo = line.Split(':');
-                    return courseInfo.Length == 3 && courseInfo[2] == currentUser.Name;
-                })
-                .Select(courseInfo => courseInfo.Split(':'))
-                .Select(courseInfo => new
-                {
-                    CourseID = courseInfo[0],
-                    CourseName = courseInfo[1],
-                    TeacherName = courseInfo[2]
-                });
-
-            foreach (var course in filteredCourses)
+            foreach (Course course in CurrentTeacher.TeachingCourses)
             {
-                ListViewItem item = new ListViewItem(course.CourseID);
+                ListViewItem item = new ListViewItem(course.CourseID.ToString());
                 item.SubItems.Add(course.CourseName);
-                item.SubItems.Add(course.TeacherName);
                 listView1.Items.Add(item);
             }
         }
 
-        public ViewCourses(User currentUser)
+        public ViewCourses(Teacher currentTeacher)
         {
             InitializeComponent();
-            PopulateCourseListView(currentUser);
+            LoadTeachingCourses(currentTeacher);
         }
 
         private void button_viewCourse_Click(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count == 1)
-            {
-                ListViewItem selectedItem = listView1.SelectedItems[0];
+            
+        }
 
-                int courseID = int.Parse(selectedItem.Text);
-                string courseName = selectedItem.SubItems[1].Text;
-                string teacherName = selectedItem.SubItems[2].Text;
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-                Course selectedCourse = new Course(courseID, courseName, teacherName);
-                ViewCourse viewCourseForm = new ViewCourse(selectedCourse);
-                viewCourseForm.Show();
-            }
-            else
-            {
-                MessageBox.Show("Please select a course to view.", "No Course Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+        }
+
+        private void button_editCourse_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_deleteCourse_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

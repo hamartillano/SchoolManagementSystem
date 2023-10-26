@@ -35,10 +35,10 @@
             this.textBox_teacher = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.label4 = new System.Windows.Forms.Label();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -80,6 +80,7 @@
             this.textBox_teacher.Name = "textBox_teacher";
             this.textBox_teacher.Size = new System.Drawing.Size(257, 20);
             this.textBox_teacher.TabIndex = 7;
+            this.textBox_teacher.TextChanged += new System.EventHandler(this.textBox_teacher_TextChanged);
             // 
             // label3
             // 
@@ -104,15 +105,6 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(564, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Enrolled Students:";
-            // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Student ID";
@@ -127,6 +119,15 @@
             // 
             this.columnHeader3.Text = "Student Grade";
             this.columnHeader3.Width = 92;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(564, 11);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Enrolled Students:";
             // 
             // ViewCourse
             // 

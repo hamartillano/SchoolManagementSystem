@@ -1,5 +1,6 @@
 ﻿using SchoolManagementSystem.Classes;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,53 +14,72 @@ namespace SchoolManagementSystem.Forms
 {
     public partial class Login : Form
     {
-        public User CurrentUser;
+        private List<User> registeredUsers = new List<User>();
 
         public Login()
         {
             InitializeComponent();
+            LoadRegisteredUsers();
+        }
+
+        private void LoadRegisteredUsers()
+        {
+            try
+            {
+                string[] lines = File.ReadAllLines("registrations.txt");
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split(',');
+                    if (parts.Length == 5)
+                    {
+                        User user = new User
+                        (
+                            int.Parse(parts[0]),
+                            (UserType)Enum.Parse(typeof(UserType), parts[1]),
+                            parts[2],
+                            parts[3],
+                            parts[4]
+                        );
+                        registeredUsers.Add(user);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading registered users: " + ex.Message);
+            }
+        }
+
+        private User AuthenticateUser(string username, string password)
+        {
+            User authenticatedUser = registeredUsers.Find(user =>
+                user.Username == username && user.Password == password);
+
+            return authenticatedUser;
         }
 
         private void button_login_Click(object sender, EventArgs e)
         {
-            string inputUsername = textBox_username.Text;
-            string inputPassword = textBox_password.Text;
+            string username = textBox_username.Text;
+            string password = textBox_password.Text;
 
-            string[] lines = System.IO.File.ReadAllLines("login.txt");
-            CurrentUser = lines
-                .Select(line => line.Split(':'))
-                .Where(parts => parts.Length == 4)
-                .Select(parts => new User(
-                    (UserType)Enum.Parse(typeof(UserType), parts[0]),
-                    parts[1],
-                    parts[2],
-                    parts[3]))
-                .FirstOrDefault(u => u.Username == inputUsername && u.Password == inputPassword);
+            User authenticatedUser = AuthenticateUser(username, password);
 
-            if (CurrentUser != null)
+            if (authenticatedUser != null)
             {
-                switch (CurrentUser.UserType)
+                MessageBox.Show("Authentication successful!");
+
+                if (authenticatedUser.UserType == UserType.Teacher)
                 {
-                    case UserType.Admin:
-                        MessageBox.Show("Admin login successful!");
-                        break;
-                    case UserType.Teacher:
-                        MessageBox.Show("Teacher login successful!");
-                        ViewCourses viewCourses = new ViewCourses(CurrentUser);
-                        viewCourses.Show();
-                        this.Hide();
-                        break;
-                    case UserType.Student:
-                        MessageBox.Show("Student login successful!");
-                        break;
-                    default:
-                        MessageBox.Show("Unknown user type.");
-                        break;
+                    Teacher currentTeacher = new Teacher(authenticatedUser);
+                    ViewCourses viewCoursesForm = new ViewCourses(currentTeacher);
+                    viewCoursesForm.Show();
+                    this.Hide();
                 }
             }
             else
             {
-                MessageBox.Show("Login failed. Please check your credentials");
+                MessageBox.Show("Authentication failed. Please check your credentials.");
             }
         }
 

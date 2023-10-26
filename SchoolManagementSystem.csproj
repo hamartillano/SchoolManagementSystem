@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Classes\AttendanceRecord.cs" />
     <Compile Include="Classes\Course.cs" />
+    <Compile Include="Classes\CourseAttendance.cs" />
     <Compile Include="Classes\Student.cs" />
     <Compile Include="Classes\Teacher.cs" />
     <Compile Include="Classes\User.cs" />

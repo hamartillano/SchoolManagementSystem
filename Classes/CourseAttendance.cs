@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystem.Classes
 {
-    internal class School
+    public class CourseAttendance
     {
+        public Student Student { get; set; }
+        public Course Course { get; set; }
     }
 }
