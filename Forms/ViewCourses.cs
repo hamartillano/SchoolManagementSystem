@@ -75,5 +75,11 @@ namespace SchoolManagementSystem.Forms
         {
 
         }
+
+        private void button_createCourse_Click(object sender, EventArgs e)
+        {
+            CreateCourse createCourseForm = new CreateCourse(CurrentTeacher);
+            createCourseForm.Show();
+        }
     }
 }
