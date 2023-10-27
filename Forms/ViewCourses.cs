@@ -68,7 +68,26 @@ namespace SchoolManagementSystem.Forms
 
         private void button_editCourse_Click(object sender, EventArgs e)
         {
+            if (listView1.SelectedItems.Count == 1)
+            {
+                ListViewItem selectedItem = listView1.SelectedItems[0];
 
+                int selectedCourseID;
+                if (int.TryParse(selectedItem.SubItems[0].Text, out selectedCourseID))
+                {
+                    selectedCourse = CurrentTeacher.TeachingCourses.FirstOrDefault(course => course.CourseID == selectedCourseID);
+
+                    if (selectedCourse != null)
+                    {
+                        EditCourse editCourseForm = new EditCourse(selectedCourse);
+                        editCourseForm.Show();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a course to edit.");
+            }
         }
 
         private void button_deleteCourse_Click(object sender, EventArgs e)
