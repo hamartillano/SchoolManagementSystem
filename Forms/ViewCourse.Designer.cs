@@ -145,6 +145,7 @@
             this.Controls.Add(this.textBox_couseID);
             this.Controls.Add(this.label1);
             this.Name = "ViewCourse";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewCourse";
             this.ResumeLayout(false);
             this.PerformLayout();
