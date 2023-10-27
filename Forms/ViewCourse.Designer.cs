@@ -55,6 +55,7 @@
             // 
             // textBox_couseID
             // 
+            this.textBox_couseID.Enabled = false;
             this.textBox_couseID.Location = new System.Drawing.Point(133, 23);
             this.textBox_couseID.Name = "textBox_couseID";
             this.textBox_couseID.Size = new System.Drawing.Size(342, 20);
@@ -62,6 +63,7 @@
             // 
             // textBox_courseName
             // 
+            this.textBox_courseName.Enabled = false;
             this.textBox_courseName.Location = new System.Drawing.Point(133, 62);
             this.textBox_courseName.Name = "textBox_courseName";
             this.textBox_courseName.Size = new System.Drawing.Size(342, 20);
@@ -78,6 +80,7 @@
             // 
             // textBox_teacher
             // 
+            this.textBox_teacher.Enabled = false;
             this.textBox_teacher.Location = new System.Drawing.Point(133, 104);
             this.textBox_teacher.Name = "textBox_teacher";
             this.textBox_teacher.Size = new System.Drawing.Size(342, 20);
