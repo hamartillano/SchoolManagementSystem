@@ -15,10 +15,48 @@ namespace SchoolManagementSystem.Forms
 {
     public partial class ViewCourse : Form
     {
-        public ViewCourse()
+        private Course selectedCourse;
+
+        public ViewCourse(Course course)
         {
             InitializeComponent();
+            selectedCourse = course;
+            LoadCourseDetails();
+            LoadEnrolledStudents();
         }
+
+        private void LoadCourseDetails()
+        {
+            textBox_couseID.Text = selectedCourse.CourseID.ToString();
+            textBox_courseName.Text = selectedCourse.CourseName;
+            textBox_teacher.Text = selectedCourse.TeacherID.ToString();
+        }
+
+        private void LoadEnrolledStudents()
+        {
+            listView1.Items.Clear();
+
+            string[] lines = File.ReadAllLines("students.txt");
+
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split(',');
+
+                int courseID = int.Parse(parts[0]);
+                int studentID = int.Parse(parts[1]);
+                string studentName = parts[2];
+                string grade = parts[3];
+
+                if (courseID == selectedCourse.CourseID)
+                {
+                    ListViewItem item = new ListViewItem(studentID.ToString());
+                    item.SubItems.Add(studentName);
+                    item.SubItems.Add(grade);
+                    listView1.Items.Add(item);
+                }
+            }
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -26,6 +64,16 @@ namespace SchoolManagementSystem.Forms
         }
 
         private void textBox_teacher_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

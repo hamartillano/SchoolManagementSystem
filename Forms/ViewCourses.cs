@@ -9,12 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SchoolManagementSystem.Classes;
+using System.Data.Common;
 
 namespace SchoolManagementSystem.Forms
 {
     public partial class ViewCourses : Form
     {
-        private void LoadTeachingCourses(Teacher CurrentTeacher)
+        private Teacher CurrentTeacher;
+        private Course selectedCourse;
+
+        private void LoadTeachingCourses()
         {
             listView1.Items.Clear();
 
@@ -29,12 +33,33 @@ namespace SchoolManagementSystem.Forms
         public ViewCourses(Teacher currentTeacher)
         {
             InitializeComponent();
-            LoadTeachingCourses(currentTeacher);
+            CurrentTeacher = currentTeacher;
+            LoadTeachingCourses();
         }
 
         private void button_viewCourse_Click(object sender, EventArgs e)
         {
-            
+            if (listView1.SelectedItems.Count == 1)
+            {
+                ListViewItem selectedItem = listView1.SelectedItems[0];
+
+                int selectedCourseID;
+                if (int.TryParse(selectedItem.SubItems[0].Text, out selectedCourseID))
+                {
+                    selectedCourse = CurrentTeacher.TeachingCourses.FirstOrDefault(course => course.CourseID == selectedCourseID);
+
+                    if (selectedCourse != null)
+                    {
+                        ViewCourse viewCourseForm = new ViewCourse(selectedCourse);
+                        viewCourseForm.Show();
+                        this.Hide();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a course to view.");
+            }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)

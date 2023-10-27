@@ -44,7 +44,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 31);
+            this.label1.Location = new System.Drawing.Point(74, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 0;
@@ -53,22 +53,22 @@
             // 
             // textBox_couseID
             // 
-            this.textBox_couseID.Location = new System.Drawing.Point(126, 27);
+            this.textBox_couseID.Location = new System.Drawing.Point(137, 28);
             this.textBox_couseID.Name = "textBox_couseID";
-            this.textBox_couseID.Size = new System.Drawing.Size(257, 20);
+            this.textBox_couseID.Size = new System.Drawing.Size(342, 20);
             this.textBox_couseID.TabIndex = 3;
             // 
             // textBox_courseName
             // 
-            this.textBox_courseName.Location = new System.Drawing.Point(126, 73);
+            this.textBox_courseName.Location = new System.Drawing.Point(137, 70);
             this.textBox_courseName.Name = "textBox_courseName";
-            this.textBox_courseName.Size = new System.Drawing.Size(257, 20);
+            this.textBox_courseName.Size = new System.Drawing.Size(342, 20);
             this.textBox_courseName.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 77);
+            this.label2.Location = new System.Drawing.Point(57, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 4;
@@ -76,20 +76,21 @@
             // 
             // textBox_teacher
             // 
-            this.textBox_teacher.Location = new System.Drawing.Point(126, 119);
+            this.textBox_teacher.Location = new System.Drawing.Point(137, 112);
             this.textBox_teacher.Name = "textBox_teacher";
-            this.textBox_teacher.Size = new System.Drawing.Size(257, 20);
+            this.textBox_teacher.Size = new System.Drawing.Size(342, 20);
             this.textBox_teacher.TabIndex = 7;
             this.textBox_teacher.TextChanged += new System.EventHandler(this.textBox_teacher_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 123);
+            this.label3.Location = new System.Drawing.Point(24, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 13);
+            this.label3.Size = new System.Drawing.Size(107, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Assigned Teacher:";
+            this.label3.Text = "Assigned TeacherID:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // listView1
             // 
@@ -98,12 +99,13 @@
             this.columnHeader2,
             this.columnHeader3});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(417, 27);
+            this.listView1.Location = new System.Drawing.Point(137, 154);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(387, 463);
+            this.listView1.Size = new System.Drawing.Size(342, 296);
             this.listView1.TabIndex = 8;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -123,7 +125,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(564, 11);
+            this.label4.Location = new System.Drawing.Point(38, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 13);
             this.label4.TabIndex = 10;
@@ -133,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 536);
+            this.ClientSize = new System.Drawing.Size(503, 478);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.textBox_teacher);
