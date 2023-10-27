@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Classes\AttendanceRecord.cs" />
     <Compile Include="Classes\Course.cs" />
+    <Compile Include="Classes\CourseAttendance.cs" />
     <Compile Include="Classes\Student.cs" />
     <Compile Include="Classes\Teacher.cs" />
     <Compile Include="Classes\User.cs" />
@@ -63,6 +64,18 @@
     <Compile Include="Forms\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ViewCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewCourse.Designer.cs">
+      <DependentUpon>ViewCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewCourses.Designer.cs">
+      <DependentUpon>ViewCourses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Login.resx">
@@ -70,6 +83,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewCourse.resx">
+      <DependentUpon>ViewCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewCourses.resx">
+      <DependentUpon>ViewCourses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

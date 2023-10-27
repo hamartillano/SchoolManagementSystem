@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,53 +17,105 @@ namespace SchoolManagementSystem.Forms
         public Register()
         {
             InitializeComponent();
+
+            int randomUserID = GenerateRandomUserID();
+            textBox_id.Text = randomUserID.ToString();
         }
+
+        //*****************************************************************************************
+        // Functions
+        //*****************************************************************************************
+
+        private int GenerateRandomUserID()
+        {
+            Random random = new Random();
+            int minUserID = 1000;
+            int maxUserID = 9999;
+            int userID = random.Next(minUserID, maxUserID + 1);
+
+            return userID;
+        }
+
+        //*****************************************************************************************
+        // UI Functions
+        //*****************************************************************************************
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Login loginForm = new Login();
-            this.Close();
-            loginForm.Show();
-        }
-
         private void button_register_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(textBox_username.Text) && !string.IsNullOrWhiteSpace(textBox_password.Text))
+            if (!(radioButton_teacher.Checked || radioButton_student.Checked))
             {
-                if (!radioButton_teacher.Checked && !radioButton_student.Checked)
-                {
-                    MessageBox.Show("Please select one user type (teacher or student)");
-                    return;
-                }
+                MessageBox.Show("Please select a user type (Teacher or Student).");
+                return;
+            }
 
-                UserType userType = radioButton_teacher.Checked ? UserType.Teacher : UserType.Student;
-                string username = textBox_username.Text;
-                string password = textBox_password.Text;
-                string name = textBox_name.Text;
-
-                if (User.UserLoginExists(userType, username))
-                {
-                    MessageBox.Show("User already exists in the system.");
-                }
-                else
-                {
-                    User newUser = new User(userType, username, password, name);
-                    User.WriteUserToLoginFile(newUser);
-                    MessageBox.Show("Registration successful!");
-                    this.Close();
-                    Login loginForm = new Login();
-                    loginForm.Show();
-                }
+            if (string.IsNullOrWhiteSpace(textBox_username.Text) ||
+                string.IsNullOrWhiteSpace(textBox_password.Text) ||
+                string.IsNullOrWhiteSpace(textBox_name.Text)
+                )
+            {
+                MessageBox.Show("Please fill in all fields.");
+                return;
             }
             else
             {
-                MessageBox.Show("Please provide both a username and a password");
+                string registrationInfo = $"{textBox_id.Text}," +
+                                          $"{(radioButton_teacher.Checked ? "Teacher" : "Student")}," +
+                                          $"{textBox_username.Text}," +
+                                          $"{textBox_password.Text}," +
+                                          $"{textBox_name.Text}";
+
+                try
+                {
+                    using (StreamWriter sw = new StreamWriter("registrations.txt", true))
+                    {
+                        sw.WriteLine(registrationInfo);
+                    }
+
+                    MessageBox.Show("Registration successful. Data has been saved to the text file.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+
+                textBox_username.Clear();
+                textBox_password.Clear();
+                textBox_name.Clear();
+                textBox_id.Clear();
+                radioButton_teacher.Checked = false;
+                radioButton_student.Checked = false;
+
+                Login logingScreen = new Login();
+                logingScreen.Show();
+                this.Hide();
             }
+        }
+
+        private void radioButton_student_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton_teacher_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button_login_Click(object sender, EventArgs e)
+        {
+            Login loginForm = new Login();
+            loginForm.Show();
+            this.Hide();
         }
     }
 }

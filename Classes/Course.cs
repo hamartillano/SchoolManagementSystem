@@ -11,17 +11,7 @@ namespace SchoolManagementSystem.Classes
     {
         public int CourseID { get; set; }
         public string CourseName { get; set; }
-        public string TeacherName { get; set; }
+        public int TeacherID { get; set; }
         public List<Student> EnrolledStudents { get; set; }
-        public List<AttendanceRecord> AttendanceRecords { get; set; }
-
-        public Course(int courseID, string courseName, string teacherName)
-        {
-            this.CourseID = courseID;
-            this.CourseName = courseName;
-            this.TeacherName = teacherName;
-            this.EnrolledStudents = new List<Student>();
-            this.AttendanceRecords = new List<AttendanceRecord>();
-        }
     }
 }
