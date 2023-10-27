@@ -43,7 +43,7 @@
             this.columnHeader_courseID,
             this.columnHeader_courseName});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(61, 63);
+            this.listView1.Location = new System.Drawing.Point(14, 15);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(345, 289);
             this.listView1.TabIndex = 0;
@@ -63,7 +63,7 @@
             // 
             // button_viewCourse
             // 
-            this.button_viewCourse.Location = new System.Drawing.Point(61, 376);
+            this.button_viewCourse.Location = new System.Drawing.Point(14, 330);
             this.button_viewCourse.Name = "button_viewCourse";
             this.button_viewCourse.Size = new System.Drawing.Size(75, 23);
             this.button_viewCourse.TabIndex = 1;
@@ -73,7 +73,7 @@
             // 
             // button_createCourse
             // 
-            this.button_createCourse.Location = new System.Drawing.Point(142, 376);
+            this.button_createCourse.Location = new System.Drawing.Point(95, 330);
             this.button_createCourse.Name = "button_createCourse";
             this.button_createCourse.Size = new System.Drawing.Size(84, 23);
             this.button_createCourse.TabIndex = 2;
@@ -82,7 +82,7 @@
             // 
             // button_editCourse
             // 
-            this.button_editCourse.Location = new System.Drawing.Point(232, 376);
+            this.button_editCourse.Location = new System.Drawing.Point(185, 330);
             this.button_editCourse.Name = "button_editCourse";
             this.button_editCourse.Size = new System.Drawing.Size(84, 23);
             this.button_editCourse.TabIndex = 3;
@@ -92,7 +92,7 @@
             // 
             // button_deleteCourse
             // 
-            this.button_deleteCourse.Location = new System.Drawing.Point(322, 376);
+            this.button_deleteCourse.Location = new System.Drawing.Point(275, 330);
             this.button_deleteCourse.Name = "button_deleteCourse";
             this.button_deleteCourse.Size = new System.Drawing.Size(84, 23);
             this.button_deleteCourse.TabIndex = 4;
@@ -104,7 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 463);
+            this.ClientSize = new System.Drawing.Size(373, 369);
             this.Controls.Add(this.button_deleteCourse);
             this.Controls.Add(this.button_editCourse);
             this.Controls.Add(this.button_createCourse);

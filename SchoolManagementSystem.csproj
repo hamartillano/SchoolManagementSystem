@@ -52,6 +52,12 @@
     <Compile Include="Classes\Student.cs" />
     <Compile Include="Classes\Teacher.cs" />
     <Compile Include="Classes\User.cs" />
+    <Compile Include="Forms\EditGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditGrade.Designer.cs">
+      <DependentUpon>EditGrade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\EditGrade.resx">
+      <DependentUpon>EditGrade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

@@ -39,12 +39,14 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
+            this.button_editGrade = new System.Windows.Forms.Button();
+            this.button_back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 32);
+            this.label1.Location = new System.Drawing.Point(70, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 0;
@@ -53,14 +55,14 @@
             // 
             // textBox_couseID
             // 
-            this.textBox_couseID.Location = new System.Drawing.Point(137, 28);
+            this.textBox_couseID.Location = new System.Drawing.Point(133, 23);
             this.textBox_couseID.Name = "textBox_couseID";
             this.textBox_couseID.Size = new System.Drawing.Size(342, 20);
             this.textBox_couseID.TabIndex = 3;
             // 
             // textBox_courseName
             // 
-            this.textBox_courseName.Location = new System.Drawing.Point(137, 70);
+            this.textBox_courseName.Location = new System.Drawing.Point(133, 62);
             this.textBox_courseName.Name = "textBox_courseName";
             this.textBox_courseName.Size = new System.Drawing.Size(342, 20);
             this.textBox_courseName.TabIndex = 5;
@@ -68,7 +70,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(57, 74);
+            this.label2.Location = new System.Drawing.Point(53, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 4;
@@ -76,7 +78,7 @@
             // 
             // textBox_teacher
             // 
-            this.textBox_teacher.Location = new System.Drawing.Point(137, 112);
+            this.textBox_teacher.Location = new System.Drawing.Point(133, 104);
             this.textBox_teacher.Name = "textBox_teacher";
             this.textBox_teacher.Size = new System.Drawing.Size(342, 20);
             this.textBox_teacher.TabIndex = 7;
@@ -85,7 +87,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 115);
+            this.label3.Location = new System.Drawing.Point(20, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 13);
             this.label3.TabIndex = 6;
@@ -99,7 +101,7 @@
             this.columnHeader2,
             this.columnHeader3});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(137, 154);
+            this.listView1.Location = new System.Drawing.Point(133, 146);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(342, 296);
             this.listView1.TabIndex = 8;
@@ -125,17 +127,39 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 154);
+            this.label4.Location = new System.Drawing.Point(34, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 13);
             this.label4.TabIndex = 10;
             this.label4.Text = "Enrolled Students:";
             // 
+            // button_editGrade
+            // 
+            this.button_editGrade.Location = new System.Drawing.Point(133, 449);
+            this.button_editGrade.Name = "button_editGrade";
+            this.button_editGrade.Size = new System.Drawing.Size(75, 23);
+            this.button_editGrade.TabIndex = 11;
+            this.button_editGrade.Text = "Edit Grade";
+            this.button_editGrade.UseVisualStyleBackColor = true;
+            this.button_editGrade.Click += new System.EventHandler(this.button_editGrade_Click);
+            // 
+            // button_back
+            // 
+            this.button_back.Location = new System.Drawing.Point(52, 449);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(75, 23);
+            this.button_back.TabIndex = 12;
+            this.button_back.Text = "Back";
+            this.button_back.UseVisualStyleBackColor = true;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            // 
             // ViewCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(503, 478);
+            this.ClientSize = new System.Drawing.Size(495, 494);
+            this.Controls.Add(this.button_back);
+            this.Controls.Add(this.button_editGrade);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.textBox_teacher);
@@ -147,6 +171,7 @@
             this.Name = "ViewCourse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewCourse";
+            this.Load += new System.EventHandler(this.ViewCourse_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +190,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Button button_editGrade;
+        private System.Windows.Forms.Button button_back;
     }
 }

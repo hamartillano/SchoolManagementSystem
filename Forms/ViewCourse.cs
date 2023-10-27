@@ -77,5 +77,33 @@ namespace SchoolManagementSystem.Forms
         {
 
         }
+
+        private void button_editGrade_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = listView1.SelectedItems[0];
+                int studentID = int.Parse(selectedItem.Text);
+                string studentName = selectedItem.SubItems[1].Text;
+                string studentGrade = selectedItem.SubItems[2].Text;
+
+                EditGrade editGradeForm = new EditGrade(studentID, studentName, studentGrade);
+                editGradeForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select a student to mark the grade.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void ViewCourse_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

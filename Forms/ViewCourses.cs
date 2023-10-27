@@ -52,7 +52,6 @@ namespace SchoolManagementSystem.Forms
                     {
                         ViewCourse viewCourseForm = new ViewCourse(selectedCourse);
                         viewCourseForm.Show();
-                        this.Hide();
                     }
                 }
             }
