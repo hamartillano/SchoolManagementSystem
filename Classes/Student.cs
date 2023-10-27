@@ -15,6 +15,5 @@ namespace SchoolManagementSystem.Classes
         }
 
         public List<Course> EnrolledCourses { get; set; }
-        public List<CourseAttendance> CourseAttendances { get; set; }
     }
 }
