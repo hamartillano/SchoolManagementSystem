@@ -32,7 +32,6 @@
             this.teacherID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.teacherName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button_deleteTeacher = new System.Windows.Forms.Button();
-            this.button_newTeacher = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -61,7 +60,7 @@
             // 
             // button_deleteTeacher
             // 
-            this.button_deleteTeacher.Location = new System.Drawing.Point(13, 264);
+            this.button_deleteTeacher.Location = new System.Drawing.Point(155, 269);
             this.button_deleteTeacher.Name = "button_deleteTeacher";
             this.button_deleteTeacher.Size = new System.Drawing.Size(100, 23);
             this.button_deleteTeacher.TabIndex = 1;
@@ -69,21 +68,11 @@
             this.button_deleteTeacher.UseVisualStyleBackColor = true;
             this.button_deleteTeacher.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button_newTeacher
-            // 
-            this.button_newTeacher.Location = new System.Drawing.Point(157, 264);
-            this.button_newTeacher.Name = "button_newTeacher";
-            this.button_newTeacher.Size = new System.Drawing.Size(100, 23);
-            this.button_newTeacher.TabIndex = 2;
-            this.button_newTeacher.Text = "New Teacher";
-            this.button_newTeacher.UseVisualStyleBackColor = true;
-            // 
             // ViewTeachers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(270, 304);
-            this.Controls.Add(this.button_newTeacher);
             this.Controls.Add(this.button_deleteTeacher);
             this.Controls.Add(this.listView1);
             this.Name = "ViewTeachers";
@@ -99,6 +88,5 @@
         private System.Windows.Forms.ColumnHeader teacherID;
         private System.Windows.Forms.ColumnHeader teacherName;
         private System.Windows.Forms.Button button_deleteTeacher;
-        private System.Windows.Forms.Button button_newTeacher;
     }
 }

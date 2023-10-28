@@ -57,14 +57,18 @@ namespace SchoolManagementSystem.Forms
         {
             if (listView1.SelectedItems.Count == 1)
             {
-                ListViewItem selectedTeacherItem = listView1.SelectedItems[0];
-                string selectedTeacherID = selectedTeacherItem.SubItems[0].Text;
+                DialogResult result = MessageBox.Show("Are you sure you want to delete the Teacher?", "Confirm Deletion", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    ListViewItem selectedTeacherItem = listView1.SelectedItems[0];
+                    string selectedTeacherID = selectedTeacherItem.SubItems[0].Text;
 
-                RemoveTeacherFromRegistrations(selectedTeacherID);
+                    RemoveTeacherFromRegistrations(selectedTeacherID);
 
-                UpdateCoursesFile(selectedTeacherID);
+                    UpdateCoursesFile(selectedTeacherID);
 
-                listView1.Items.Remove(selectedTeacherItem);
+                    listView1.Items.Remove(selectedTeacherItem);
+                }
             }
             else
             {
