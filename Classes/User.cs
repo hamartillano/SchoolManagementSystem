@@ -9,6 +9,7 @@ namespace SchoolManagementSystem.Classes
 {
     public enum UserType
     {
+        Admin,
         Teacher,
         Student
     }

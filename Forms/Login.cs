@@ -69,6 +69,12 @@ namespace SchoolManagementSystem.Forms
             {
                 MessageBox.Show("Authentication successful!");
 
+                if(authenticatedUser.UserType == UserType.Admin)
+                {
+                    AdminMain adminMainForm = new AdminMain();
+                    adminMainForm.Show();
+                    this.Hide();
+                }
                 if (authenticatedUser.UserType == UserType.Teacher)
                 {
                     Teacher currentTeacher = new Teacher(authenticatedUser);
