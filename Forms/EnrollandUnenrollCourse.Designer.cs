@@ -35,7 +35,6 @@
 			this.status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
-			this.grade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.SuspendLayout();
 			// 
 			// listView1
@@ -44,8 +43,7 @@
             this.courseID,
             this.courseName,
             this.teacherID,
-            this.status,
-            this.grade});
+            this.status});
 			this.listView1.HideSelection = false;
 			this.listView1.Location = new System.Drawing.Point(24, 30);
 			this.listView1.Name = "listView1";
@@ -94,10 +92,6 @@
 			this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
-			// grade
-			// 
-			this.grade.Text = "Grade";
-			// 
 			// EnrollandUnenrollCourse
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -122,6 +116,5 @@
 		private System.Windows.Forms.ColumnHeader courseName;
 		private System.Windows.Forms.ColumnHeader teacherID;
 		private System.Windows.Forms.ColumnHeader status;
-		private System.Windows.Forms.ColumnHeader grade;
 	}
 }
