@@ -86,10 +86,12 @@ namespace SchoolManagementSystem.Forms
                 int studentID = int.Parse(selectedItem.Text);
                 string studentName = selectedItem.SubItems[1].Text;
                 string studentGrade = selectedItem.SubItems[2].Text;
+                int courseID = selectedCourse.CourseID;
 
-                EditGrade editGradeForm = new EditGrade(studentID, studentName, studentGrade);
+                EditGrade editGradeForm = new EditGrade(studentID, studentName, studentGrade, courseID);
                 editGradeForm.Show();
-            }
+                this.Close();
+			}
             else
             {
                 MessageBox.Show("Please select a student to mark the grade.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);

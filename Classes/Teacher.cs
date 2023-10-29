@@ -49,6 +49,7 @@ namespace SchoolManagementSystem.Classes
 
             return TeachingCourses;
         }
+
 		public Course GetCourseById(int courseId)
 		{
 			foreach (Course course in TeachingCourses)
@@ -61,5 +62,6 @@ namespace SchoolManagementSystem.Classes
 			return null; // Course not found
 		}
 
-	}
+	
+    }
 }

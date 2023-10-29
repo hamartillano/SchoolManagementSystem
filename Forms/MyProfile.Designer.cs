@@ -68,6 +68,7 @@
 			this.button1.TabIndex = 21;
 			this.button1.Text = "Back";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click_1);
 			// 
 			// label4
 			// 
@@ -118,6 +119,7 @@
 			this.textBox_Username.Name = "textBox_Username";
 			this.textBox_Username.Size = new System.Drawing.Size(273, 26);
 			this.textBox_Username.TabIndex = 13;
+			this.textBox_Username.TextChanged += new System.EventHandler(this.textBox_Username_TextChanged);
 			// 
 			// label5
 			// 

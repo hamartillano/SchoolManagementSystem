@@ -13,13 +13,13 @@ namespace SchoolManagementSystem.Classes
     {
 
 		public List<Course> EnrolledCourses { get; set; }
-		public Teacher teacher { get; set; }
 
 		public Student(User user)
             : base(user.Id, user.UserType, user.Username, user.Password, user.Name)
         {
 		    this.EnrolledCourses = new List<Course>();
-			this.teacher = teacher;
+			LoadEnrolledCoursesAndDetails();
+
 		}
 
 		public void LoadEnrolledCoursesAndDetails()
@@ -38,14 +38,6 @@ namespace SchoolManagementSystem.Classes
 						string studentName = parts[2];
 						string grade = parts[3];
 
-						if (studentID == this.Id)
-						{
-							Course enrolledCourse = teacher.GetCourseById(courseID); 
-							if (enrolledCourse != null)
-							{
-								EnrolledCourses.Add(enrolledCourse);
-							}
-						}
 					}
 				}
 			}
@@ -55,16 +47,15 @@ namespace SchoolManagementSystem.Classes
 			}
 		}
 
+
 		public void EnrollInCourse(Course course)
 		{
 			EnrolledCourses.Add(course);
-			course.EnrolledStudents.Add(this);
 		}
 
 		public void WithdrawFromCourse(Course course)
 		{
 			EnrolledCourses.Remove(course);
-			course.EnrolledStudents.Remove(this);
 		}
 
 	}

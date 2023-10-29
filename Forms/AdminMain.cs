@@ -21,14 +21,12 @@ namespace SchoolManagementSystem.Forms
         {
             ViewTeachers viewTeachersForm = new ViewTeachers();
             viewTeachersForm.Show();
-            this.Hide();
         }
 
         private void button_viewStudents_Click(object sender, EventArgs e)
         {
             ViewStudents viewStudentsForm = new ViewStudents();
             viewStudentsForm.Show();
-            this.Hide();
         }
     }
 }

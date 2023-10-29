@@ -29,19 +29,50 @@
 		private void InitializeComponent()
 		{
 			this.listView1 = new System.Windows.Forms.ListView();
+			this.courseID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.courseName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.teacherID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
+			this.grade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.SuspendLayout();
 			// 
 			// listView1
 			// 
+			this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.courseID,
+            this.courseName,
+            this.teacherID,
+            this.status,
+            this.grade});
 			this.listView1.HideSelection = false;
 			this.listView1.Location = new System.Drawing.Point(24, 30);
 			this.listView1.Name = "listView1";
 			this.listView1.Size = new System.Drawing.Size(576, 325);
 			this.listView1.TabIndex = 0;
 			this.listView1.UseCompatibleStateImageBehavior = false;
+			this.listView1.View = System.Windows.Forms.View.Details;
 			this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+			// 
+			// courseID
+			// 
+			this.courseID.Text = "Course ID";
+			this.courseID.Width = 118;
+			// 
+			// courseName
+			// 
+			this.courseName.Text = "Course Name";
+			this.courseName.Width = 129;
+			// 
+			// teacherID
+			// 
+			this.teacherID.Text = "Teacher ID";
+			this.teacherID.Width = 126;
+			// 
+			// status
+			// 
+			this.status.Text = "Status";
 			// 
 			// button1
 			// 
@@ -61,6 +92,11 @@
 			this.button2.TabIndex = 2;
 			this.button2.Text = "Unenroll";
 			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
+			// grade
+			// 
+			this.grade.Text = "Grade";
 			// 
 			// EnrollandUnenrollCourse
 			// 
@@ -82,5 +118,10 @@
 		private System.Windows.Forms.ListView listView1;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.ColumnHeader courseID;
+		private System.Windows.Forms.ColumnHeader courseName;
+		private System.Windows.Forms.ColumnHeader teacherID;
+		private System.Windows.Forms.ColumnHeader status;
+		private System.Windows.Forms.ColumnHeader grade;
 	}
 }

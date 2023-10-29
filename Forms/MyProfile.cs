@@ -238,6 +238,16 @@ namespace SchoolManagementSystem.Forms
 		{
 
 		}
+
+		private void button1_Click_1(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private void textBox_Username_TextChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 	
 }
