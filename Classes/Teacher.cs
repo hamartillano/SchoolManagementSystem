@@ -56,10 +56,10 @@ namespace SchoolManagementSystem.Classes
 			{
 				if (course.CourseID == courseId)
 				{
-					return course; // Course found
+					return course;
 				}
 			}
-			return null; // Course not found
+			return null;
 		}
 
 	

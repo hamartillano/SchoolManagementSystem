@@ -107,11 +107,11 @@ namespace SchoolManagementSystem.Forms
 		{
 			if (textBox_password.UseSystemPasswordChar)
 			{
-				textBox_password.UseSystemPasswordChar = false; // Show password 
+				textBox_password.UseSystemPasswordChar = false;
 			}
 			else
 			{
-				textBox_password.UseSystemPasswordChar = true; // Hide password 
+				textBox_password.UseSystemPasswordChar = true;
 			}
 		}
 
