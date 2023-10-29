@@ -177,9 +177,9 @@ namespace SchoolManagementSystem.Forms
 			}
 			else
 			{
-				studentUsername = newStudentUsername;
-				studentName = newStudentName;
-				studentPassword = newStudentPassword;
+				currentStudent.Username = newStudentUsername;
+				currentStudent.Name = newStudentName;
+				currentStudent.Password = newStudentPassword;
 				UpdateStudentInfoInFile();
 				this.Close();
 			}
