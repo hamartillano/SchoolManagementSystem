@@ -28,40 +28,44 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.SuspendLayout();
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(12, 38);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(330, 242);
-			this.button1.TabIndex = 0;
-			this.button1.Text = "My Profile";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// button2
-			// 
-			this.button2.Location = new System.Drawing.Point(375, 38);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(302, 242);
-			this.button2.TabIndex = 1;
-			this.button2.Text = "Enroll/UnEnroll in Course";
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
-			// 
-			// StudentView
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(689, 317);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button1);
-			this.Name = "StudentView";
-			this.Text = "StudentView";
-			this.ResumeLayout(false);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(8, 25);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(220, 157);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "My Profile";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(250, 25);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(201, 157);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Enroll/UnEnroll in Course";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // StudentView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(459, 206);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "StudentView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "StudentView";
+            this.ResumeLayout(false);
 
 		}
 

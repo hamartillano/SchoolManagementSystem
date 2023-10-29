@@ -81,6 +81,7 @@ namespace SchoolManagementSystem.Forms
                     {
                         EditCourse editCourseForm = new EditCourse(selectedCourse);
                         editCourseForm.Show();
+                        this.Close();
                     }
                 }
             }

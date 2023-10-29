@@ -82,6 +82,8 @@ namespace SchoolManagementSystem.Forms
             }
 
             MessageBox.Show("Course updated successfully.");
+            Login loginForm = new Login();
+            loginForm.Show();
             this.Close();
         }
 
