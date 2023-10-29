@@ -50,6 +50,7 @@
             this.button_viewStudents.TabIndex = 1;
             this.button_viewStudents.Text = "View Students";
             this.button_viewStudents.UseVisualStyleBackColor = true;
+            this.button_viewStudents.Click += new System.EventHandler(this.button_viewStudents_Click);
             // 
             // AdminMain
             // 
