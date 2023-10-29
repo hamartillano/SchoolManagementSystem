@@ -75,6 +75,7 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button_deleteStudent);
             this.Name = "ViewStudents";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewStudents";
             this.ResumeLayout(false);
 
