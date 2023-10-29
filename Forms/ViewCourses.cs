@@ -107,6 +107,8 @@ namespace SchoolManagementSystem.Forms
                         DialogResult result = MessageBox.Show($"Are you sure you want to delete the course: {selectedCourse.CourseName}?", "Confirm Deletion", MessageBoxButtons.YesNo);
                         if (result == DialogResult.Yes)
                         {
+                            listView1.Items.Remove(selectedItem);
+
                             List<string> lines = File.ReadAllLines("courses.txt").ToList();
 
                             bool courseFound = false;
@@ -128,7 +130,6 @@ namespace SchoolManagementSystem.Forms
                             if (courseFound)
                             {
                                 File.WriteAllLines("courses.txt", lines);
-                                LoadTeachingCourses();
                             }
                             else
                             {
@@ -148,6 +149,7 @@ namespace SchoolManagementSystem.Forms
         {
             CreateCourse createCourseForm = new CreateCourse(CurrentTeacher);
             createCourseForm.Show();
+            this.Close();
         }
 
 		private void ViewCourses_Load(object sender, EventArgs e)
