@@ -67,48 +67,6 @@ namespace SchoolManagementSystem.Forms
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			//string updatedStudentName = textBox_cname.Text;
-
-			//if (string.IsNullOrEmpty(updatedStudentName))
-			//{
-			//	MessageBox.Show("Student name must be provided.");
-			//	return;
-			//} 
-
-			//try
-			//{
-			//	List<string> updatedLines = new List<string>();
-			//	string[] lines = File.ReadAllLines("students.txt");
-			//	foreach (string line in lines)
-			//	{
-			//		string[] parts = line.Split(',');
-			//		if (parts.Length == 4)
-			//		{
-			//			int courseID = int.Parse(parts[0]);
-			//			int studentID = int.Parse(parts[1]);
-			//			string studentName = parts[2];
-			//			string grade = parts[3];
-			//			if (studentID == )
-			//			{
-			//				updatedLines.Add($"");
-			//			}
-			//			else
-			//			{
-			//				updatedLines.Add(line); // do nothing
-			//			}
-			//		}
-			//	}
-
-			//	File.WriteAllLines("courses.txt", updatedLines);
-			//}
-			//catch (Exception ex)
-			//{
-			//	MessageBox.Show("Error updating course: " + ex.Message);
-			//	return;
-			//}
-
-			//MessageBox.Show("Course updated successfully.");
-			//this.Close();
 		}
 
 		private void label3_Click(object sender, EventArgs e)
@@ -177,7 +135,6 @@ namespace SchoolManagementSystem.Forms
 						regParts[2] = studentUsername;
 					}
 
-					// Update the line with the modified values
 					registrationLines[i] = string.Join(",", regParts);
 				}
 			}
@@ -195,7 +152,6 @@ namespace SchoolManagementSystem.Forms
 						studentParts[2] = studentName;
 					}
 
-					// Update the line with the modified values
 					studentLines[i] = string.Join(",", studentParts);
 				}
 			}

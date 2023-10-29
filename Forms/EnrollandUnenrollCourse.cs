@@ -33,7 +33,7 @@ namespace SchoolManagementSystem.Forms
 			try
 			{
 				string[] lines = File.ReadAllLines("courses.txt");
-				string[] enrollmentLines = File.ReadAllLines("students.txt"); // Read student enrollments
+				string[] enrollmentLines = File.ReadAllLines("students.txt"); 
 
 				List<int> enrolledCourseIDs = new List<int>();
 
@@ -71,7 +71,7 @@ namespace SchoolManagementSystem.Forms
 						// Check if the course is in the list of enrolled courses
 						if (enrolledCourseIDs.Contains(course.CourseID))
 						{
-							currentStudent.EnrollInCourse(course); // Enroll the student in the course
+							currentStudent.EnrollInCourse(course); 
 						}
 
 						courses.Add(course);
@@ -100,11 +100,11 @@ namespace SchoolManagementSystem.Forms
 				// Check if the currentStudent is enrolled in the course
 				if (currentStudent.EnrolledCourses.Contains(course))
 				{
-					item.SubItems.Add("Enrolled"); // Display "Enrolled" if the student is enrolled
+					item.SubItems.Add("Enrolled"); 
 				}
 				else
 				{
-					item.SubItems.Add("Not Enrolled"); // Display "Not Enrolled" if the student is not enrolled
+					item.SubItems.Add("Not Enrolled"); 
 					item.SubItems.Add("N/A");
 				}
 
@@ -120,7 +120,6 @@ namespace SchoolManagementSystem.Forms
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			// Check if a course is selected in the list view
 			if (listView1.SelectedItems.Count == 1)
 			{
 				ListViewItem selectedItem = listView1.SelectedItems[0];
@@ -130,16 +129,9 @@ namespace SchoolManagementSystem.Forms
 				Course selectedCourse = AllCourses.Find(course => course.CourseID == selectedCourseID);
 				if (selectedCourse != null && !currentStudent.EnrolledCourses.Contains(selectedCourse))
 				{
-					// Add an enrollment entry for the student and the selected course
 					string newEnrollment = $"{selectedCourseID},{currentStudent.Id},{currentStudent.Name},*";
-					// Add any other relevant enrollment information here (e.g., grade)
-
-					// Append the new enrollment entry to the students.txt file
 					File.AppendAllText("students.txt", newEnrollment + Environment.NewLine);
-
-					// Update the student's enrolled courses list
 					currentStudent.EnrollInCourse(selectedCourse);
-
 					// Re-populate the course list to reflect the changes
 					PopulateCourseList();
 				}
@@ -161,7 +153,6 @@ namespace SchoolManagementSystem.Forms
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			// Check if a course is selected in the list view
 			if (listView1.SelectedItems.Count == 1)
 			{
 				ListViewItem selectedItem = listView1.SelectedItems[0];
@@ -181,7 +172,6 @@ namespace SchoolManagementSystem.Forms
 
 						if (courseID == selectedCourseID && studentID == currentStudent.Id)
 						{
-							// Skip this line to unenroll the student from the course
 							continue;
 						}
 					}
@@ -189,8 +179,6 @@ namespace SchoolManagementSystem.Forms
 					// Add other enrollment entries back to the updated list
 					updatedEnrollments.Add(enrollmentLine);
 				}
-
-				// Write the updated enrollment list back to the students.txt file
 				File.WriteAllLines("students.txt", updatedEnrollments);
 
 				// Update the student's enrolled courses list
@@ -200,7 +188,6 @@ namespace SchoolManagementSystem.Forms
 					currentStudent.WithdrawFromCourse(selectedCourse);
 				}
 
-				// Re-populate the course list to reflect the changes
 				PopulateCourseList();
 			}
 			else
