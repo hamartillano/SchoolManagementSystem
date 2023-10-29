@@ -32,6 +32,7 @@
             this.studentID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.studentName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button_deleteStudent = new System.Windows.Forms.Button();
+            this.button_back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -67,16 +68,29 @@
             this.button_deleteStudent.UseVisualStyleBackColor = true;
             this.button_deleteStudent.Click += new System.EventHandler(this.button_deleteStudent_Click);
             // 
+            // button_back
+            // 
+            this.button_back.Location = new System.Drawing.Point(23, 263);
+            this.button_back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(62, 23);
+            this.button_back.TabIndex = 4;
+            this.button_back.Text = "Back";
+            this.button_back.UseVisualStyleBackColor = true;
+            this.button_back.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ViewStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(268, 299);
+            this.Controls.Add(this.button_back);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button_deleteStudent);
             this.Name = "ViewStudents";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewStudents";
+            this.Load += new System.EventHandler(this.ViewStudents_Load);
             this.ResumeLayout(false);
 
         }
@@ -87,5 +101,6 @@
         private System.Windows.Forms.ColumnHeader studentID;
         private System.Windows.Forms.ColumnHeader studentName;
         private System.Windows.Forms.Button button_deleteStudent;
-    }
+		private System.Windows.Forms.Button button_back;
+	}
 }

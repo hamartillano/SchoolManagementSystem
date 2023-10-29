@@ -67,9 +67,9 @@ namespace SchoolManagementSystem.Forms
             }
 
             MessageBox.Show("Course added successfully.");
-
-            textBox_cid.Clear();
-            textBox_cname.Clear();
+            Login loginForm = new Login();
+            loginForm.Show();
+            this.Close();
         }
     }
 }

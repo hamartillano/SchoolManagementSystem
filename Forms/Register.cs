@@ -22,10 +22,6 @@ namespace SchoolManagementSystem.Forms
             textBox_id.Text = randomUserID.ToString();
         }
 
-        //*****************************************************************************************
-        // Functions
-        //*****************************************************************************************
-
         private int GenerateRandomUserID()
         {
             Random random = new Random();
@@ -35,10 +31,6 @@ namespace SchoolManagementSystem.Forms
 
             return userID;
         }
-
-        //*****************************************************************************************
-        // UI Functions
-        //*****************************************************************************************
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -117,5 +109,10 @@ namespace SchoolManagementSystem.Forms
             loginForm.Show();
             this.Hide();
         }
-    }
+
+		private void textBox_name_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

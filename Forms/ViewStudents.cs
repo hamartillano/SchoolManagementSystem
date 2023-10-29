@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,7 @@ namespace SchoolManagementSystem.Forms
                     string selectedStudentID = selectedStudentItem.SubItems[0].Text;
 
                     RemoveStudentFromRegistration(selectedStudentID);
+                    RemoveStudentFromStudents(selectedStudentID);
 
                     listView1.Items.Remove(selectedStudentItem);
                 }
@@ -69,7 +71,7 @@ namespace SchoolManagementSystem.Forms
             }
         }
 
-        private void RemoveStudentFromRegistration(string teacherID)
+        private void RemoveStudentFromRegistration(string studentID)
         {
             try
             {
@@ -80,7 +82,7 @@ namespace SchoolManagementSystem.Forms
                     foreach (string line in lines)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length >= 2 && parts[0].Trim() != teacherID)
+                        if (parts[0].Trim() != studentID)
                         {
                             writer.WriteLine(line);
                         }
@@ -92,5 +94,39 @@ namespace SchoolManagementSystem.Forms
                 MessageBox.Show("Error removing teacher from registrations.txt: " + ex.Message);
             }
         }
-    }
+
+        private void RemoveStudentFromStudents(string studentID)
+        {
+            try
+            {
+                string[] lines = File.ReadAllLines("students.txt");
+
+                using (StreamWriter writer = new StreamWriter("students.txt"))
+                {
+                    foreach (string line in lines)
+                    {
+                        string[] parts = line.Split(',');
+                        if (parts[1].Trim() != studentID)
+                        {
+                            writer.WriteLine(line);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error removing teacher from registrations.txt: " + ex.Message);
+            }
+        }
+
+        private void ViewStudents_Load(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+            this.Close();
+		}
+	}
 }

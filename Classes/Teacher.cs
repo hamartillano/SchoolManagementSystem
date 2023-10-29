@@ -50,5 +50,18 @@ namespace SchoolManagementSystem.Classes
             return TeachingCourses;
         }
 
+		public Course GetCourseById(int courseId)
+		{
+			foreach (Course course in TeachingCourses)
+			{
+				if (course.CourseID == courseId)
+				{
+					return course;
+				}
+			}
+			return null;
+		}
+
+	
     }
 }

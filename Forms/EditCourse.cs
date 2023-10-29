@@ -82,7 +82,14 @@ namespace SchoolManagementSystem.Forms
             }
 
             MessageBox.Show("Course updated successfully.");
+            Login loginForm = new Login();
+            loginForm.Show();
             this.Close();
         }
-    }
+
+		private void textBox_assignedTeacher_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

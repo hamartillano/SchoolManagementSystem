@@ -34,6 +34,7 @@
             this.textBox_password = new System.Windows.Forms.TextBox();
             this.button_login = new System.Windows.Forms.Button();
             this.button_register = new System.Windows.Forms.Button();
+            this.togglePassword_Click = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label_username
@@ -67,6 +68,8 @@
             this.textBox_password.Name = "textBox_password";
             this.textBox_password.Size = new System.Drawing.Size(235, 20);
             this.textBox_password.TabIndex = 3;
+            this.textBox_password.UseSystemPasswordChar = true;
+            this.textBox_password.TextChanged += new System.EventHandler(this.textBox_password_TextChanged);
             // 
             // button_login
             // 
@@ -88,11 +91,24 @@
             this.button_register.UseVisualStyleBackColor = true;
             this.button_register.Click += new System.EventHandler(this.button_register_Click);
             // 
+            // togglePassword_Click
+            // 
+            this.togglePassword_Click.AutoSize = true;
+            this.togglePassword_Click.Location = new System.Drawing.Point(370, 56);
+            this.togglePassword_Click.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.togglePassword_Click.Name = "togglePassword_Click";
+            this.togglePassword_Click.Size = new System.Drawing.Size(56, 17);
+            this.togglePassword_Click.TabIndex = 6;
+            this.togglePassword_Click.Text = "Show ";
+            this.togglePassword_Click.UseVisualStyleBackColor = true;
+            this.togglePassword_Click.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 130);
+            this.Controls.Add(this.togglePassword_Click);
             this.Controls.Add(this.button_register);
             this.Controls.Add(this.button_login);
             this.Controls.Add(this.textBox_password);
@@ -102,6 +118,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,5 +132,6 @@
         private System.Windows.Forms.TextBox textBox_password;
         private System.Windows.Forms.Button button_login;
         private System.Windows.Forms.Button button_register;
-    }
+		private System.Windows.Forms.CheckBox togglePassword_Click;
+	}
 }

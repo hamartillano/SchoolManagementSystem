@@ -123,5 +123,15 @@ namespace SchoolManagementSystem.Forms
                 MessageBox.Show("Error updating courses.txt: " + ex.Message);
             }
         }
-    }
+
+		private void ViewTeachers_Load(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button1_Click_1(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+	}
 }

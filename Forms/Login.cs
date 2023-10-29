@@ -82,6 +82,13 @@ namespace SchoolManagementSystem.Forms
                     viewCoursesForm.Show();
                     this.Hide();
                 }
+                if (authenticatedUser.UserType == UserType.Student)
+                {
+                    Student currentStudent = new Student(authenticatedUser);
+                    StudentView studentViewForm = new StudentView(currentStudent);
+                    studentViewForm.Show();
+                    this.Hide();
+                }
             }
             else
             {
@@ -95,5 +102,27 @@ namespace SchoolManagementSystem.Forms
             registerForm.Show();
             this.Hide();
         }
-    }
+
+		private void checkBox1_CheckedChanged(object sender, EventArgs e)
+		{
+			if (textBox_password.UseSystemPasswordChar)
+			{
+				textBox_password.UseSystemPasswordChar = false;
+			}
+			else
+			{
+				textBox_password.UseSystemPasswordChar = true;
+			}
+		}
+
+		private void textBox_password_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void Login_Load(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

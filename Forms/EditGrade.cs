@@ -9,13 +9,16 @@ namespace SchoolManagementSystem.Forms
         private int studentID;
         private string studentName;
         private string studentGrade;
+        private int currentCourseID;
 
-        public EditGrade(int StudentID, string StudentName, string StudentGrade)
+        public EditGrade(int StudentID, string StudentName, string StudentGrade, int courseID)
         {
             InitializeComponent();
             textBox_sid.Text = StudentID.ToString();
             textBox_sname.Text = StudentName;
             textBox_sgrade.Text = StudentGrade;
+            studentID = StudentID;
+            currentCourseID = courseID;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -36,16 +39,19 @@ namespace SchoolManagementSystem.Forms
                 string line = lines[i];
                 string[] parts = line.Split(',');
 
-                if (parts.Length >= 2 && int.TryParse(parts[1], out int id) && id == studentID)
-                {
-                    parts[3] = studentGrade;
-                    lines[i] = string.Join(",", parts);
-                    break;
-                }
-            }
+				if (parts.Length >= 2 && int.TryParse(parts[1], out int studentID) && int.TryParse(parts[0], out int courseID))
+				{
+					if (studentID == this.studentID && courseID == this.currentCourseID)
+					{
+						parts[3] = studentGrade;
+						lines[i] = string.Join(",", parts);
+						break;
+					}
+				}
+			}
 
             File.WriteAllLines("students.txt", lines);
-        }
+		}
 
         private void button_confirm_Click_1(object sender, EventArgs e)
         {
@@ -59,12 +65,28 @@ namespace SchoolManagementSystem.Forms
 
             studentGrade = newGrade;
             UpdateGradeInFile();
-            this.Close();
+			MessageBox.Show("New student grade has been updated.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.None);
+			this.Close();
         }
 
         private void button_back_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-    }
+
+		private void label2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void EditGrade_Load(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBox_sgrade_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

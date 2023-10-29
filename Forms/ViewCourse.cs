@@ -27,7 +27,7 @@ namespace SchoolManagementSystem.Forms
 
         private void LoadCourseDetails()
         {
-            textBox_couseID.Text = selectedCourse.CourseID.ToString();
+            textBox_courseID.Text = selectedCourse.CourseID.ToString();
             textBox_courseName.Text = selectedCourse.CourseName;
             textBox_teacher.Text = selectedCourse.TeacherID.ToString();
         }
@@ -86,10 +86,12 @@ namespace SchoolManagementSystem.Forms
                 int studentID = int.Parse(selectedItem.Text);
                 string studentName = selectedItem.SubItems[1].Text;
                 string studentGrade = selectedItem.SubItems[2].Text;
+                int courseID = selectedCourse.CourseID;
 
-                EditGrade editGradeForm = new EditGrade(studentID, studentName, studentGrade);
+                EditGrade editGradeForm = new EditGrade(studentID, studentName, studentGrade, courseID);
                 editGradeForm.Show();
-            }
+                this.Close();
+			}
             else
             {
                 MessageBox.Show("Please select a student to mark the grade.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -105,5 +107,10 @@ namespace SchoolManagementSystem.Forms
         {
             this.Close();
         }
-    }
+
+		private void textBox_couseID_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
