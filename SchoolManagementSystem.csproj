@@ -74,17 +74,35 @@
     <Compile Include="Forms\EditGrade.Designer.cs">
       <DependentUpon>EditGrade.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EnrollandUnenrollCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EnrollandUnenrollCourse.Designer.cs">
+      <DependentUpon>EnrollandUnenrollCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MyProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MyProfile.Designer.cs">
+      <DependentUpon>MyProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Register.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentView.Designer.cs">
+      <DependentUpon>StudentView.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ViewCourse.cs">
       <SubType>Form</SubType>
@@ -97,6 +115,12 @@
     </Compile>
     <Compile Include="Forms\ViewCourses.Designer.cs">
       <DependentUpon>ViewCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewStudents.Designer.cs">
+      <DependentUpon>ViewStudents.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ViewTeachers.cs">
       <SubType>Form</SubType>
@@ -118,17 +142,29 @@
     <EmbeddedResource Include="Forms\EditGrade.resx">
       <DependentUpon>EditGrade.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EnrollandUnenrollCourse.resx">
+      <DependentUpon>EnrollandUnenrollCourse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MyProfile.resx">
+      <DependentUpon>MyProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentView.resx">
+      <DependentUpon>StudentView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ViewCourse.resx">
       <DependentUpon>ViewCourse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ViewCourses.resx">
       <DependentUpon>ViewCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewStudents.resx">
+      <DependentUpon>ViewStudents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ViewTeachers.resx">
       <DependentUpon>ViewTeachers.cs</DependentUpon>

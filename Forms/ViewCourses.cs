@@ -148,5 +148,10 @@ namespace SchoolManagementSystem.Forms
             CreateCourse createCourseForm = new CreateCourse(CurrentTeacher);
             createCourseForm.Show();
         }
-    }
+
+		private void ViewCourses_Load(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

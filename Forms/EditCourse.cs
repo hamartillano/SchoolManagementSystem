@@ -84,5 +84,10 @@ namespace SchoolManagementSystem.Forms
             MessageBox.Show("Course updated successfully.");
             this.Close();
         }
-    }
+
+		private void textBox_assignedTeacher_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

@@ -27,7 +27,7 @@ namespace SchoolManagementSystem.Forms
 
         private void LoadCourseDetails()
         {
-            textBox_couseID.Text = selectedCourse.CourseID.ToString();
+            textBox_courseID.Text = selectedCourse.CourseID.ToString();
             textBox_courseName.Text = selectedCourse.CourseName;
             textBox_teacher.Text = selectedCourse.TeacherID.ToString();
         }
@@ -105,5 +105,10 @@ namespace SchoolManagementSystem.Forms
         {
             this.Close();
         }
-    }
+
+		private void textBox_couseID_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

@@ -117,5 +117,10 @@ namespace SchoolManagementSystem.Forms
             loginForm.Show();
             this.Hide();
         }
-    }
+
+		private void textBox_name_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
